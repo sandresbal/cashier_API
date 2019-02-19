@@ -29,6 +29,7 @@ public class GestionMovimientos implements GestionMovimientosLocal {
     public GestionMovimientos() {
         // TODO Auto-generated constructor stub
     }
+    
 
     /*
     Este método insertarMovimiento toma como argumentos el número de cuenta en el

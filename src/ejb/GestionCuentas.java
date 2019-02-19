@@ -73,6 +73,12 @@ public class GestionCuentas implements GestionCuentasLocal {
     */
     
     @Override
+    public Cuenta buscarCuenta(int numCuenta) {
+    	Cuenta c = em.find(Cuenta.class, numCuenta);
+    	return c;
+    }
+    
+    @Override
     public void actualizarSaldo(int numCuenta, double diferencia, String operacion){
         /*
         Declaramos o inicializamos los objetos necesarios para la operación de

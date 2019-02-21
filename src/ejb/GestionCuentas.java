@@ -65,18 +65,40 @@ public class GestionCuentas implements GestionCuentasLocal {
         return c;
     }
     
-    /*
-    Este método actualizarSaldo toma como parámetros el número de la cuenta cuyo
-    saldo se actualizará, la diferencia que se sumará o restará a ese saldo, así
-    como el tipo de operación que determinará si se suma o se resta.
-    
-    */
+    /* 
+     * ACTIVIDAD 11: MÉTODO NUEVO
+     * Este método permite buscar una cuenta una vez proporcionado su id
+     * que se toma como parámetro del método
+     */
     
     @Override
     public Cuenta buscarCuenta(int numCuenta) {
     	Cuenta c = em.find(Cuenta.class, numCuenta);
     	return c;
     }
+    
+    /* 
+     * ACTIVIDAD 11: MÉTODO NUEVO
+     * Este método permite buscar una cuenta una vez proporcionado su id
+     * que se toma como parámetro del método
+     */
+    
+    @Override
+    public void insertarCuenta(Cuenta cuen) {
+    	Cuenta nueva_c = new Cuenta();
+    	nueva_c.setNumeroCuenta(cuen.getNumeroCuenta());
+    	nueva_c.setSaldo(cuen.getSaldo());
+    	nueva_c.setTipocuenta(cuen.getTipocuenta());
+    	em.persist(nueva_c);
+    }
+    
+    
+    /*
+    Este método actualizarSaldo toma como parámetros el número de la cuenta cuyo
+    saldo se actualizará, la diferencia que se sumará o restará a ese saldo, así
+    como el tipo de operación que determinará si se suma o se resta.
+    
+    */
     
     @Override
     public void actualizarSaldo(int numCuenta, double diferencia, String operacion){
